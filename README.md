@@ -1,3 +1,17 @@
+
+该工程使用cmake编译，如果遇到如下问题，可以把相应vs  的msbuild  加入环境变量
+CMake Error at CMakeLists.txt:3 (project):
+  Failed to run MSBuild command:
+ 
+    MSBuild.exe
+ 
+  to get the value of VCTargetsPath:
+Configuring incomplete, errors occurred!
+看错误信息很简单，就是找不到MSBuild，然后百度了一圈都没有发现答案（解决后发现stack overflow上有同样的问题），不知道从哪里设置cmake默认的MSBuild，后来想了一下，既然没有配置那就应该直接放到环境变量即可。事实证明可行，以我的电脑安装路径为例：“D:\VS2019\MSBuild\Current\Bin”，加入环境变量即解决问题，希望能帮到大家。
+
+
+
+
 [![CI status](https://libwebsockets.org/sai/status/libwebsockets)](https://libwebsockets.org/git/libwebsockets) [![Coverity Scan Build Status](https://scan.coverity.com/projects/3576/badge.svg)](https://scan.coverity.com/projects/3576) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/2266/badge)](https://bestpractices.coreinfrastructure.org/projects/2266) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/144fb195a83046e484a75c8b4c6cfc99)](https://www.codacy.com/app/lws-team/libwebsockets?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=warmcat/libwebsockets&amp;utm_campaign=Badge_Grade) [![Total alerts](https://img.shields.io/lgtm/alerts/g/warmcat/libwebsockets.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/warmcat/libwebsockets/alerts/) [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/warmcat/libwebsockets.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/warmcat/libwebsockets/context:cpp) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/warmcat/libwebsockets.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/warmcat/libwebsockets/context:javascript)
 
 # Libwebsockets
